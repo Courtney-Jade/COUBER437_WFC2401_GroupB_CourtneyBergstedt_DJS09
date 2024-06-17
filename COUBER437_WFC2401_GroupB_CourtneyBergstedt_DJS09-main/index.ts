@@ -8,7 +8,7 @@ const container = document.querySelector('.container')
 const button = document.querySelector('button')
 const footer = document.querySelector('.footer')
 
-let isLoggedIn: booleans
+let isLoggedIn: boolean
 
 enum Permissions {
     ADMIN = 'ADMIN', 

@@ -1,7 +1,7 @@
+
 import { showReviewTotal, populateUser, showDetails, getTopTwoReviews} from './utils'
-import { Price, Country } from './type'
 import { Permissions , LoyaltyUser } from './enums'
-import  Review  from './interface'
+import { Review, Property } from './interfaces'
 const propertyContainer = document.querySelector('.properties')
 const reviewContainer = document.querySelector('.reviews')
 const container = document.querySelector('.container')
@@ -9,24 +9,6 @@ const button = document.querySelector('button')
 const footer = document.querySelector('.footer')
 
 let isLoggedIn: boolean
-
-enum Permissions {
-    ADMIN = 'ADMIN', 
-    READ_ONLY = 'READ_ONLY'
-}
-
-enum LoyaltyUser {
-    GOLD_USER = 'GOLD_USER',
-    SILVER_USER = 'SILVER_USER',
-    BRONZE_USER = 'BRONZE_USER'
-}
-
-interface Review {
-    name: string; 
-    stars: number; 
-    loyaltyUser: LoyaltyUser; 
-    date: string;   
-}
 
 // Reviews
 const reviews: Review[] = [
@@ -59,20 +41,6 @@ const you = {
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
-interface Property {
-    image: string;
-    title: string;
-    price: Price;
-    location: {
-        firstLine: string;
-        city: string;
-        code: number | string;
-        country: string
-    }
-    contact: [ number, string];
-    isAvailable: boolean;
-}
-
 // Array of Properties
 const properties : Property[] = [
     {
@@ -91,7 +59,7 @@ const properties : Property[] = [
     {
         image: 'images/poland-property.jpg',
         title: 'Polish Cottage',
-        price: 34,
+        price: 30,
         location: {
             firstLine: 'no 23',
             city: 'Gdansk',
@@ -104,7 +72,7 @@ const properties : Property[] = [
     {
         image: 'images/london-property.jpg',
         title: 'London Flat',
-        price: 23,
+        price: 25,
         location: {
             firstLine: 'flat 15',
             city: 'London',
@@ -113,6 +81,19 @@ const properties : Property[] = [
         },
         contact: [+34829374892553, 'andyluger@aol.com'],
         isAvailable: true
+    },
+    {
+        image: 'images/malaysian-hotel.jpeg',
+        title: 'Malia Hotel',
+        price: 35,
+        location: {
+            firstLine: 'Room 4',
+            city: 'Malia',
+            code: 45334,
+            country: 'Malaysia'
+        },
+        contact: [ +60349822083, 'lee34@gmail.com'],
+        isAvailable: false
     }
 ]
 

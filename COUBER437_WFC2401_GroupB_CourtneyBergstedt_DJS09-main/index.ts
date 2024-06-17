@@ -1,14 +1,14 @@
-mport { showReviewTotal, populateUser, showDetails, getTopTwoReviews} from './utils'
-import { Price, Country } from './types'
+import { showReviewTotal, populateUser, showDetails, getTopTwoReviews} from './utils'
+import { Price, Country } from './type'
 import { Permissions , LoyaltyUser } from './enums'
-import  Review  from './interfaces'
+import  Review  from './interface'
 const propertyContainer = document.querySelector('.properties')
 const reviewContainer = document.querySelector('.reviews')
 const container = document.querySelector('.container')
 const button = document.querySelector('button')
 const footer = document.querySelector('.footer')
 
-let isLoggedIn: boolean
+let isLoggedIn: booleans
 
 enum Permissions {
     ADMIN = 'ADMIN', 
